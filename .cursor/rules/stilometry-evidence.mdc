@@ -1,0 +1,5 @@
+---
+description: Evidence and provenance contract
+alwaysApply: true
+---
+Every metric requires formula/version, hashes, source spans, sufficiency and confidence. Parser-dependent values are `insufficient`; never fabricate. Citations must resolve to existing local spans.

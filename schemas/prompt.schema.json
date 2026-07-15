@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Stilometry prompt compiler artifact",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["status", "schema_version", "must", "must_not", "tests", "evidence_refs", "provenance"],
+  "properties": {
+    "status": {"type": "string"},
+    "schema_version": {"type": "string"},
+    "must": {"type": "array"},
+    "must_not": {"type": "array"},
+    "tests": {"type": "array"},
+    "evidence_refs": {"type": "array"},
+    "provenance": {"type": "object"},
+    "blockers": {"type": "array"}
+  }
+}

@@ -1,0 +1,5 @@
+---
+description: Local-first privacy boundary for stilometry
+alwaysApply: true
+---
+Deterministic commands are offline-only. Use project-root path containment, UTF-8, hashes and redacted spans. Never print corpus, PII, secrets or raw quotes. Remote interpretation requires explicit approval and payload visibility.

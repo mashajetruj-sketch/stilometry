@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Stilometry approval artifact",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["status", "schema_version", "approval_event", "approved_input_hash", "approved_metrics_hash", "approved_report_hash", "approved_payload", "provenance"],
+  "properties": {
+    "status": {"type": "string"},
+    "schema_version": {"type": "string"},
+    "approval_event": {"type": "object"},
+    "approved_input_hash": {"type": "string"},
+    "approved_metrics_hash": {"type": "string"},
+    "approved_report_hash": {"type": "string"},
+    "approved_payload": {"type": "object"},
+    "provenance": {"type": "object"},
+    "blockers": {"type": "array"}
+  }
+}

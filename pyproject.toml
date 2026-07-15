@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stilometry"
+version = "0.2.0"
+description = "Cursor plugin: Russian author stylometry — 28 metrics, Slovnet NLP, LLM profile & style prompt"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [{ name = "Nikita Kulikov" }]
+keywords = ["stylometry", "cursor", "russian-nlp", "slovnet", "writing-style"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Text Processing :: Linguistic",
+]
+dependencies = [
+  "razdel>=0.5.0",
+  "pymorphy3>=2.0.0",
+  "slovnet>=0.6.0",
+  "navec>=0.10.0",
+]
+
+[project.optional-dependencies]
+schema = ["jsonschema>=4.20"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

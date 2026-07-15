@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Stilometry metrics artifact",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "metrics"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "metrics": {"type": "object"},
+    "metrics_hash": {"type": "string"},
+    "provenance": {"type": "object"}
+  }
+}

@@ -1,0 +1,5 @@
+---
+description: Anti-slop and non-diagnostic output gate
+alwaysApply: true
+---
+Reject invented quotes, generic AI filler, unsupported imitation, certainty, attribution, protected-trait inference and diagnosis. Prompt output uses abstract must/must_not/tests and no raw quotes or PII.

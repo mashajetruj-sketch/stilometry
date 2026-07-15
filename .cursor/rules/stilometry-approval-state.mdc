@@ -1,0 +1,5 @@
+---
+description: Explicit approval state machine
+alwaysApply: true
+---
+States are ingest → metrics_validated → draft → approved → revised → personality_hypotheses → prompt_compiled. Approval requires reviewer, timestamp and immutable input hash. Never infer approval from chat.

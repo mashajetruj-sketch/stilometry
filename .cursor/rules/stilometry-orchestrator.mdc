@@ -1,0 +1,38 @@
+---
+description: Stilometry Director — /stilometry-start orchestrates via Task; welcome, session, corpus intake, LLM analysis pipeline
+alwaysApply: true
+---
+
+# Stilometry — оркестратор
+
+Язык с пользователем — **русский**.
+
+## Director
+
+Команда `/stilometry-start` = **Director**. Субагенты — **только через Task**. Не выполняй corpus guard, метрики, LLM-интерпретацию и сборку отчёта в основном чате.
+
+### Сессия
+
+Каждый новый `/stilometry-start` (без явного «продолжить сессию X») создаёт папку:
+
+`stilometry-memory/sessions/<YYYY-MM-DD-HHMMSS>-<slug>/`
+
+### Intake
+
+1. Короткое приветствие — что будет сделано и зачем.
+2. Если нет файлов в чате и нет путей — **спроси** и жди.
+3. Файлы: вложения в чат → `corpus/` сессии; или внутренние пути проекта → `python stilometry.py ingest`.
+
+### Цепочка Task
+
+`corpus-guardian` → `metrics-analyst` (`razdel` + `pymorphy3` + `slovnet`, модели в `model-cache/`) → `report-auditor` → **`linguistic-interpreter`** → `profile-writer` → `profile-reviewer` → при open incidents → **`stilometry-fixer`**
+
+Первый запуск: `python stilometry.py install-models`.
+
+`parser-gap-estimator` — **только fallback**, если slovnet-метрики в `metrics.json` всё ещё `insufficient`.
+
+### Запреты
+
+- Не пропускать welcome и запрос корпуса.
+- Не выдумывать цитаты.
+- Не personality/compile без `/stilometry-approve`.

@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "scope": "project-local",
+  "agents": [
+    {"name":"corpus-guardian","calls":["metrics-analyst"],"calledBy":[]},
+    {"name":"metrics-analyst","calls":["report-auditor"],"calledBy":["corpus-guardian"]},
+    {"name":"report-auditor","calls":["linguistic-interpreter"],"calledBy":["metrics-analyst"]},
+    {"name":"linguistic-interpreter","calls":["profile-writer"],"calledBy":["report-auditor","parser-gap-estimator"]},
+    {"name":"parser-gap-estimator","calls":["linguistic-interpreter"],"calledBy":["director-nlp-fallback"]},
+    {"name":"profile-writer","calls":["profile-reviewer"],"calledBy":["linguistic-interpreter"]},
+    {"name":"profile-reviewer","calls":[],"calledBy":["profile-writer"]},
+    {"name":"personality-interpreter","calls":["prompt-compiler"],"calledBy":["human-approval"]},
+    {"name":"prompt-compiler","calls":["anti-slop-qa"],"calledBy":["personality-interpreter"]},
+    {"name":"anti-slop-qa","calls":["stilometry-fixer"],"calledBy":["prompt-compiler"]},
+    {"name":"stilometry-fixer","calls":[],"calledBy":["anti-slop-qa","director-post-run"]}
+  ],
+  "human_boundaries": ["human-approval","director-post-run","director-nlp-fallback"],
+  "commands": {
+    "entry": "stilometry-start",
+    "fix": "stilometry-fix",
+    "pipeline": ["stilometry-start","stilometry-draft","stilometry-approve","stilometry-revise","stilometry-personality","stilometry-compile","stilometry-fix"]
+  }
+}

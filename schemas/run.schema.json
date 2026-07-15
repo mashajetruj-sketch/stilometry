@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Stilometry run report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["status", "schema_version", "run_id", "sources", "metrics", "input_hash", "metrics_hash", "report_hash", "intake", "provenance"],
+  "properties": {
+    "status": {"type": "string"},
+    "schema_version": {"type": "string"},
+    "run_id": {"type": "string"},
+    "source_id": {"type": "string"},
+    "source_hash": {"type": "string"},
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source_id", "source_hash", "char_count", "token_count", "sentence_count"],
+        "properties": {
+          "source_id": {"type": "string"},
+          "source_hash": {"type": "string"},
+          "source_path": {"type": ["string", "null"]},
+          "char_count": {"type": "integer"},
+          "token_count": {"type": "integer"},
+          "sentence_count": {"type": "integer"}
+        }
+      }
+    },
+    "metrics": {"type": "object"},
+    "evidence_refs": {"type": "array"},
+    "citations": {"type": "array"},
+    "uncertainty": {"type": "object"},
+    "input_hash": {"type": "string"},
+    "metrics_hash": {"type": "string"},
+    "report_hash": {"type": "string"},
+    "intake": {"type": "object"},
+    "seed": {"type": "integer"},
+    "platform": {"type": "string"},
+    "config_hash": {"type": "string"},
+    "tokenizer_metadata": {"type": "object"},
+    "parser_metadata": {"type": "object"},
+    "model_metadata": {"type": "object"},
+    "license_metadata": {"type": "object"},
+    "provenance": {"type": "object"}
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Stilometry profile draft",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["status", "schema_version", "run_id", "input_hash", "metrics_hash", "analysis_report_hash", "sources", "metrics", "provenance"],
+  "properties": {
+    "status": {"type": "string"},
+    "schema_version": {"type": "string"},
+    "run_id": {"type": "string"},
+    "source_id": {"type": "string"},
+    "source_hash": {"type": "string"},
+    "input_hash": {"type": "string"},
+    "metrics_hash": {"type": "string"},
+    "analysis_report_hash": {"type": "string"},
+    "sources": {"type": "array"},
+    "metrics": {"type": "object"},
+    "seed": {"type": "integer"},
+    "platform": {"type": "string"},
+    "config_hash": {"type": "string"},
+    "tokenizer_metadata": {"type": "object"},
+    "parser_metadata": {"type": "object"},
+    "model_metadata": {"type": "object"},
+    "license_metadata": {"type": "object"},
+    "observations": {"type": "array"},
+    "evidence_refs": {"type": "array"},
+    "citations": {"type": "array"},
+    "uncertainty": {"type": "object"},
+    "intake": {"type": "object"},
+    "provenance": {"type": "object"},
+    "blockers": {"type": "array"}
+  }
+}
